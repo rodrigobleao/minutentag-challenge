@@ -18,7 +18,7 @@ export default function Details({ route }: DetailsScreenRouteProp) {
   const { goBack } = useHomeStackNavigation();
   const detailsData = useFetchDetails(id, brand);
   const { skus, initialSelectedSkuCode } = useUpdateStockPrice(id);
-  const [selectedSkuCode, setSelectedSkuCode] = useState<number>();
+  const [selectedSkuCode, setSelectedSkuCode] = useState<string>();
 
   useEffect(() => {
     if (!selectedSkuCode) {

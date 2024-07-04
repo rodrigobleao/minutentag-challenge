@@ -1,10 +1,10 @@
 import { SkuData, SkuUpdateReturn } from '@/types/product';
 import { useState, useEffect } from 'react';
 
-const useUpdateStockPrice = (productCode: number) => {
+const useUpdateStockPrice = (productCode: string) => {
   const [skus, setSkus] = useState<SkuData[]>([]);
   const [initialSelectedSkuCode, setInitialSelectedSkuCode] =
-    useState<number>();
+    useState<string>();
 
   useEffect(() => {
     const fetchSkus = async () => {

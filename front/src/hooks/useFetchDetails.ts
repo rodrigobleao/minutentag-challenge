@@ -1,7 +1,7 @@
 import { ProductDetails } from '@/types/product';
 import { useState, useEffect } from 'react';
 
-const useFetchDetails = (productId: number, productBrand: string) => {
+const useFetchDetails = (productId: string, productBrand: string) => {
   const [details, setDetails] = useState<ProductDetails | null>(null);
 
   const formattedUrl =

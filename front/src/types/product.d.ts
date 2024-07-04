@@ -6,13 +6,13 @@ export type SkuData = {
 };
 
 export interface SkuUpdateReturn {
-  id: number;
+  id: string;
   skus: SkuData[];
-  selectedSku: number;
+  selectedSku: string;
 }
 
 export type ProductDetails = {
-  id: number;
+  id: string;
   brand: string;
   origin: string;
   information: string;
@@ -20,10 +20,10 @@ export type ProductDetails = {
 };
 
 export type HomeProductData = {
-  id: number;
+  id: string;
   brand: string;
   price: number;
-  image?: string;
+  image?: ImageSourcePropType;
 };
 
 export type FetchHomeProductsResponse = {
@@ -31,6 +31,6 @@ export type FetchHomeProductsResponse = {
 };
 
 export type DetailsProductData = {
-  id: number;
+  id: string;
   brand: string;
 };

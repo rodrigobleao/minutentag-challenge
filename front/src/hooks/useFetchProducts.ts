@@ -3,7 +3,7 @@ import useImage from './useImage';
 import { FetchHomeProductsResponse, HomeProductData } from '@/types/product';
 
 const useProducts = () => {
-  const [products, setProducts] = useState<HomeProductData[] | null>(null);
+  const [products, setProducts] = useState<HomeProductData[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {

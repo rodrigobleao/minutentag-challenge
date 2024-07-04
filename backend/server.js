@@ -47,7 +47,7 @@ fastify.get('/api/', async () => {
 
     if (minPrice !== Infinity) {
       availableProducts.push({
-        id: product.id,
+        id: product.id.toString(),
         brand: product.brand,
         price: minPrice,
       });
@@ -78,7 +78,7 @@ fastify.get('/api/stock-price/:code', async (request, reply) => {
     const skuInfo = stockPrice[sku.code];
     if (skuInfo) {
       skusData.push({
-        code: sku.code,
+        code: sku.code.toString(),
         name: sku.name,
         stock: skuInfo.stock,
         price: skuInfo.price,
@@ -86,7 +86,7 @@ fastify.get('/api/stock-price/:code', async (request, reply) => {
 
       if (!selectedSku || selectedSku.price / 100 > skuInfo.price / 100) {
         selectedSku = {
-          code: sku.code,
+          code: sku.code.toString(),
           price: skuInfo.price,
         };
       }
@@ -94,7 +94,7 @@ fastify.get('/api/stock-price/:code', async (request, reply) => {
   });
 
   return {
-    id: product.id,
+    id: product.id.toString(),
     skus: skusData,
     selectedSku: selectedSku.code,
   };
@@ -118,7 +118,7 @@ fastify.get('/api/:productId-:productBrand', async (request, reply) => {
   }
 
   return {
-    id: product.id,
+    id: product.id.toString(),
     brand: product.brand,
     origin: product.origin,
     information: product.information,

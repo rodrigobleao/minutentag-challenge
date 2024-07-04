@@ -5,8 +5,8 @@ import { SkuData } from '@/types/product';
 interface Props {
   skus?: SkuData[];
   className?: string;
-  setFilter: (filter: number) => void;
-  filter: number;
+  setFilter: (filter: string) => void;
+  filter: string;
 }
 
 const SizeSelector: React.FC<Props> = ({
@@ -15,7 +15,7 @@ const SizeSelector: React.FC<Props> = ({
   filter,
   className,
 }) => {
-  const handleUpdateFilter = (sku: number) => {
+  const handleUpdateFilter = (sku: string) => {
     setFilter(sku);
   };
 
@@ -39,7 +39,7 @@ const SizeSelector: React.FC<Props> = ({
               variant="outlined"
               color={filter.toString() === sku.code ? 'primary' : 'gray'}
               className="px-2"
-              onPress={() => handleUpdateFilter(parseInt(sku.code))}
+              onPress={() => handleUpdateFilter(sku.code)}
             />
           );
         });
